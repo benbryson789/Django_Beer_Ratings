@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page-title%}
+{{beer.name}} Detail
+{% endblock %}
+
+{% block main-content %}
+<h1> Beer:{{beer.name}}</h1>
+<h3>Description: {{beer.description}}</h3>
+<p>ABV: {{beer.abv}}</p>
+<p>Style: {{beer.style}}</p>
+
+<hr>
+<a href = "{% url 'review_list' beer.id %}"><button>View Reviews</button></a>
+
+{% endblock %}

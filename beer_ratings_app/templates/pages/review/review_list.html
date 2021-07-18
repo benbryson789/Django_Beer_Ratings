@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page-title%}
+Review List
+{% endblock %}
+
+{% block main-content %}
+<h1> Beer: {{beer.name}}</h1>
+<h1>Reviews:</h1>
+<ul>
+    {% for r in beer.reviews.all %}
+    <li><a href="{% url 'review_detail'  beer.id r.id %}">{{ r.content}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+<a href="{% url 'review_new beer.id %}"><button>Add Review</button></a>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page-title%}
+Review Detail
+{% endblock %}
+
+{% block main-content %}
+<h1> Beer:{{ review.beer.name }}</h1>
+<h3>Review: {{ review.content }}</h3>
+<h3>Reviewer: {{ review.reviewer.username }}</h3>
+<p>Rating (1-5): {{ review.rating }}</p>
+{% endblock %}
